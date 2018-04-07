@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<div>
+	<div>
+        
+    </div>
+    <h1>The {{process}} process was successful</h1>
+    
+</div>
+
+<div>
+	{% if request.path == "/write_post": %}
+		<a href="{{ url_for('write_post') }}">WRITE ANOTHER POST</a>
+	{% endif %}
+</div>
+{% endblock %}

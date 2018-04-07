@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div>
+    <div class="jumbo">
+        <h2>Welcome to the Flask app</h2>
+        <h3>This is the User_Home page for the Flask app</h3>
+    </div>
+    
+    <div>
+        <h1>Welcome {{user.firstname}}</h1>
+        <h2>Your session id is {{s}}</h2>	
+        <a href="{{ url_for('write_post') }}">Write a post</a>
+    </div>
+</div>
+{% endblock %}

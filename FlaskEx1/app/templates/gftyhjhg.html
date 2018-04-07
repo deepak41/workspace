@@ -1,0 +1,5 @@
+{% if session['usid'] != None %}
+	{% for item in otpt %}
+      <li class="username">{{item.firstname}}</li>
+    {% endfor %}
+{% endif %}

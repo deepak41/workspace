@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="userhome">
+    <div class="jumbo">
+    	<h1>Welcome {{user.firstname}}</h1>
+        
+        <h3>This is the User_Home page</h3>
+    </div>
+    
+    <div>
+        
+        	
+        <a href="{{ url_for('write_post') }}">Write a post</a>
+    </div>
+</div>
+{% endblock %}

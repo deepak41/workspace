@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+                <ul class="list-group">
+                    {% for item in persons %}
+                        <li class="list-group-item">
+                            <h2><a href="/post/{{item.pid}}">{{item.subject}}</a></h2>
+                            <p>{{item.post_content}}</p>
+                            <p>{{item.date}}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <nav>
+                    <ul class="pager">
+                        <li><a href="/?page={{previous}}">Previous</a></li>
+                        <li><a href="/?page={{nextpage}}">Next</a></li>
+                    </ul>
+                </nav>
+            </div><!-- /.blog-main -->
+        </div>
+    </div>
+</div>
+{% endblock %}

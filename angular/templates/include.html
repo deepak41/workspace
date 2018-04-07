@@ -1,0 +1,47 @@
+{% assets filters="cssmin", output="gen/css-vendor.css",
+"../static/css/vendor/bootstrap.min.css"
+%}
+
+<link href="{{ ASSET_URL }}" media="screen" rel="stylesheet"
+    type="text/css" />
+{% endassets %}
+
+{% assets filters="cssmin", output="gen/css-app.css",
+"../static/css/admin/admin.css"
+%}
+
+<link href="{{ ASSET_URL }}" media="screen" rel="stylesheet"
+    type="text/css" />
+{% endassets %}
+
+{% assets filters="rjsmin", output="gen/vendor-main.js",
+"../static/js/vendor/jquery-1.11.3.min.js",
+"../static/js/vendor/spin.min.js",
+"../static/js/vendor/bootstrap.min.js",
+"../static/js/vendor/underscore-min.js",
+"../static/js/vendor/jquery.hotkeys.js",
+"../static/js/vendor/angular.js",
+"../static/js/vendor/angular-route.min.js",
+"../static/js/vendor/angular-resource.min.js",
+"../static/js/vendor/angular-animate.min.js",
+"../static/js/vendor/angular-modal-service.min.js",
+"../static/js/vendor/ng-infinite-scroll.min.js",
+"../static/js/vendor/angular-sanitize.min.js",
+"../static/js/vendor/notify.min.js",
+"../static/js/vendor/moment.min.js",
+"../static/js/vendor/angular-spinner.min.js",
+"../static/js/vendor/ng-file-upload.min.js"
+ %}
+
+<script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+
+{% assets filters="rjsmin", output="gen/app-main.js",
+"../static/js/app/N.js",
+"../static/js/app/app.js",
+"../static/js/app/Posts/Posts.js"
+
+ %}
+
+<script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}

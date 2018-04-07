@@ -1,0 +1,34 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title">group</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input class="form-control" ng-model="group.title">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input class="form-control" ng-model="group.description">
+                </div>
+
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="exampleInputFile">Bulk upload groups</label>
+                        <input type="file" ngf-select="uploadFile($file)" ng-model="file" name="file" ngf-max-size="2MB">
+                      </div>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-{{progress_type}}" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" ng-style="progress">
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="save()" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

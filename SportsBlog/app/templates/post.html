@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+	<div class="container post">
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+               
+                    
+                        <div class="list-group-item">
+                            <h2><a href="/post/{{post.pid}}">{{post.subject}}</a></h2>
+                            <p>{{post.post_content}}</p>
+                            <p>{{post.date}}</p><br>
+                            <a href="/edit_post/{{post.pid}}">Edit post</a>
+                        </div>
+                   
+               
+                
+            </div><!-- /.blog-main -->
+        </div>
+    </div>
+{% endblock %}

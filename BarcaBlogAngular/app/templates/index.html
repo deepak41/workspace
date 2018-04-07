@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="/static/js/angular.js"></script>
+    <script src="/static/js/angular-resource.js"></script>
+    <script src="/static/js/app.js"></script>
+	</head>
+
+	<body data-ng-app="ionicApp">
+		<div data-ng-controller="MainCtrl">
+			
+	
+				<p>Hello World</p>
+				<p> {{posts}}</p>
+				
+				<table border="1" style="width:100%">
+					  <tr data-ng-repeat="item in posts">
+					    <td>{{ '{{' }} item.uid{{ '}}' }}</td>
+					    <td>{{ '{{item.pid}}' }}</td>		
+					    <td>50</td>
+					  </tr>
+					  
+					</table>
+
+		</div>
+	</body>
+</html>

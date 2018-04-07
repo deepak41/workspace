@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="signup">
+    <h2>Welcome to the Sports Blog</h2>
+    <h3>This is the registration page</h3>
+    
+    <div>
+        <form action="{{ url_for('signup') }}" method=post>
+            <label>First Name:</label><br>
+            <input name="firstname"><br>
+            <label>Last Name:</label><br>
+            <input name="lastname"><br>
+            <label>E-mail:</label><br>
+            <input name="email"><br>
+            <label>Password:</label><br>
+            <input name="password" type="password"><br>
+            <input type="submit" value="Signup">
+        </form>
+    </div>
+</div>	
+{% endblock %}

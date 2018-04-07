@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block extranav %}
+	<li class="username">{{user.firstname}}</li>
+    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+{% endblock %}
+
+{% block content %}
+  <div class="jumbo">
+    <h2>Welcome to the Flask app</h2>
+    <h3>This is the User Home page for the Flask app</h3>
+  </div>
+  <div>
+  	
+      <h1>Welcome {{user.firstname}}</h1>
+  
+    <h2>Your session id is {{s}}</h2>	
+  </div>
+{% endblock %}

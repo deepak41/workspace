@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+      <h2>Welcome to the Flask app</h2>
+      <h3>This is the Tables page for the Flask app</h3>
+      
+      <div>
+           <table style="width:100%">
+               <tr>
+                   <th>UID</th>
+                   <th>Firstname</th>
+                   <th>Lastname</th>
+                   <th>Email</th>
+                   <th>PwdHash</th>
+               </tr>
+               {% for item in persons %}
+               <tr>
+                   <td>{{item.firstname}}</td>
+                   <td>{{item.lastname}}</td>
+                   <td>{{item.email}}</td>
+                   <td>94</td>
+                   <td>94</td>
+               </tr>
+               {% endfor %}
+          </table> 
+      </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<div>
+    <h2>Welcome to the Flask app</h2>
+    <h3>This is the registration page for the Flask app</h3>
+    
+    <div>
+        <form action="{{ url_for('signup') }}" method=post>
+            First Name: <input name="firstname"><br>
+            Last Name: <input name="lastname"><br>
+            E-mail: <input name="email"><br>
+            Pwdhash:<input name="pwd"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>	
+{% endblock %}

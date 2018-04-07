@@ -1,0 +1,11 @@
+<form name="form">
+  <div class="form-group">
+    <label for="exampleInputFile">Bulk upload events</label>
+    <input type="file" ngf-select ng-model="file" name="file" ngf-max-size="2MB">
+  </div>
+  <div class="progress">
+    <div class="progress-bar progress-bar-{{progress_type}}" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" ng-style="progress">
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit" ng-click="submit()">Upload</button>
+</form>

@@ -1,0 +1,48 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title">Event</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input class="form-control" ng-model="event.title">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input class="form-control" ng-model="event.description">
+                </div>
+                <div class="form-group">
+                    <label>Tag</label>
+                    <input class="form-control" ng-model="event.tag">
+                </div>
+                <div class="form-group">
+                    <label>Event Timestamp</label>
+                    <input class="form-control" ng-model="event.event_time">
+                </div>
+                <div class="form-group">
+                    <label>Location (lat,lng)</label>
+                    <input class="form-control" ng-model="event.latlng">
+                </div>
+                <div class="form-group">
+                    <label>Link</label>
+                    <input class="form-control" ng-model="event.link">
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input class="form-control" ng-model="event.address" placeholder="leave empty to be populated by google maps api">
+                </div>
+
+                <div class="form-group">
+                    <label>Photo</label>
+                    <input class="form-control" ng-model="event.photo">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="save()" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+      <h2>Welcome to the Flask app</h2>
+      <h3>This is the Data Update page for the Flask app</h3>
+  </div>
+<div>
+    <form action="{{ url_for('update') }}" method=post>
+        E-mail: <input name="email"><br>
+        First Name: <input name="fn"><br>
+        Last Name: <input name="ln"><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}

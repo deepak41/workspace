@@ -1,0 +1,17 @@
+﻿<div>
+    <h1>
+        this is my page 1
+        Here you should not have ng-controller ..!!
+    </h1>
+    <div>
+      
+        <form >
+            <h4 id="favorite_CAR">Which is your favorite?</h4>
+            <label ng-repeat="car in cars" for="{{car}}">
+                {{car}}
+                <input type="radio" ng-model="my.favorite" ng-value="car">
+            </label>
+            <div>Your Favourite Car is: {{my.favorite}}</div>
+        </form>
+    </div>
+</div>

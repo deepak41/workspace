@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="jumbo">
+    <h2>Welcome to the Flask app</h2>
+    <h3>This is the About page for the Flask app</h3>
+    <p>{{ url_for('about') }}</p>
+    <input type="text">Name</input>
+  </div>
+{% endblock %}

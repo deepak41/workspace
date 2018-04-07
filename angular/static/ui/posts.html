@@ -1,0 +1,36 @@
+<div class="text-center" ng-show='busy'><span us-spinner></span></div>
+<div class="text-center" ng-show='errorMessage'>{{errorMessage}}</div>
+
+<div><b>Page: </b>{{page}}</div>
+
+<div ng-show="posts.length > 0">
+    <table  class="table table-striped">
+        <thead>
+            <tr>
+                <th>UID</th>
+                <th>PID</th>
+                <th>Subject</th>
+                <th>Content</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="post in posts">
+                <td>{{post.uid}}</td>
+                <td>{{post.pid}}</td>
+                <td>{{post.subject}}</td>
+                <td>{{post.post_content}}</td>
+                <td>{{post.date}}</td>
+                <td><button class="btn btn-danger btn-sm btn-event-action" ng-click="remove($event, post)"><i class="glyphicon glyphicon-trash"></i> Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<nav>
+  <ul class="pager">
+    <li ng-class="{'disabled': page==1}" ng-click="prevPage()"><a href="#">Previous</a></li>
+    <li ng-click="nextPage()"><a href="#">Next</a></li>
+  </ul>
+</nav>

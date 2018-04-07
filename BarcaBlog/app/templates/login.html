@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<div>
+	<div class="jumbo">
+        <h2>Welcome to the Flask app</h2>
+        <h3>This is the login page for the Flask app</h3>
+    </div>
+    
+    <div>
+    	{% if emailwrong %}
+           <p>INVALID EMAIL ID</p>
+        {% endif %}
+        
+        {% if pwdwrong %}
+           <p>INVALID PASSWORD</p>
+        {% endif %}
+        
+        <form action="{{ url_for('login') }}" method=post>
+            Email ID:<input name="email"><br>
+            Password:<input name="password"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="deepak">
+    
+
+    <title>SportsBlog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/myBlog.css" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    
+ </head>
+ 
+ 
+    
+ <body>
+ <div class="test1">
+     <div class="blog-header container">
+         <h1 class="blog-title">Sports Blog</h1>
+         <p class="lead blog-description">All about Football</p>
+     </div>
+    </div>
+    
+     <div class="blog-masthead">
+         <div class="container">
+             <nav class="blog-nav">
+                 <a class="blog-nav-item active" href="{{ url_for('home') }}">Home</a>
+                 <a class="blog-nav-item" href="{{ url_for('signup') }}">Signup</a>
+                 <a class="blog-nav-item" href="{{ url_for('contact') }}">Contact Us!</a>
+                 <a class="blog-nav-item" href="{{ url_for('about') }}">About</a>
+                 
+
+                 {% if session.get("usid") == None %}
+                   <a class="blog-nav-item" href="{{ url_for('login') }}">Login</a>
+                {% endif %}
+                {% if session.get("usid") != None %}
+                <a class="blog-nav-item layoutun" href="{{ url_for('user_home') }}">{{session.get("firstname")}}</a>
+                   <a class="blog-nav-item" href="{{ url_for('logout') }}">Logout</a>
+                {% endif %}
+             </nav>
+         </div>
+     </div>
+    
+     <div class="databody">
+	     <div class="container">
+	         {% block content %}
+	         {% endblock %}
+	     </div>
+     </div>
+ </body>
+</html>

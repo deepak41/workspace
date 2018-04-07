@@ -1,0 +1,32 @@
+<div class="text-center" ng-show='busy'><span us-spinner></span></div>
+<div class="text-center" ng-show='errorMessage'>{{errorMessage}}</div>
+
+<div><b>Page: </b>{{page}}</div>
+
+<div ng-show="reports.length > 0">
+    <table  class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Text</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="report in reports">
+                <td>{{report._id}}</td>
+                <td>{{report.content_type}}</td>
+                <td>{{report.text}}</td>
+                <td>{{report.photo}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<nav>
+  <ul class="pager">
+    <li ng-class="{'disabled': page==1}" ng-click="prevPage()"><a href="#">Previous</a></li>
+    <li ng-click="nextPage()"><a href="#">Next</a></li>
+  </ul>
+</nav>

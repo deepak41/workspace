@@ -1,0 +1,52 @@
+<div class="text-center" ng-show='busy'><span us-spinner></span></div>
+<div class="text-center" ng-show='errorMessage'>{{errorMessage}}</div>
+
+<div class="pull-right">
+    <button class="btn btn-primary" ng-click="addNew()">Add new</button>
+</div>
+<div><b>Page: </b>{{page}}</div>
+
+<div ng-show="events.length > 0">
+    <table  class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Tag</th>
+                <th>Photo</th>
+                <th>Loc</th>
+                <th>Event Time</th>
+                <th>Address</th>
+                <th>Published</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="event in events">
+                <td>{{event._id}}</td>
+                <td><a href="{{event.link}}">{{event.title}}</a></td>
+                <td>{{event.description}}</td>
+                <td>{{event.tag}}</td>
+                <td><img ng-show="event.photo" ng-src="{{event.photo}}" class="post-img"/></td>
+                <td><a target="blank" href="https://maps.google.com/?q={{event.loc[1]}},{{event.loc[0]}}">{{event.loc[1]}},{{event.loc[0]}}</a></td>
+                <td>{{event.event_time | datetime }}</td>
+                <td>{{event.address}}</td>
+                <td>{{event.published | fromNow }}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm btn-event-action" ng-click="edit($event, event)"><i class="glyphicon glyphicon-edit"></i> Edit</button>
+                    <button class="btn btn-danger btn-sm btn-event-action" ng-click="remove($event, event)"><i class="glyphicon glyphicon-trash"></i> Delete</button>
+                    <button ng-show="event.status == 4" class="btn btn-success btn-sm btn-event-action" ng-click="enable($event, event)"><i class="glyphicon glyphicon-ok"></i> Enable</button>
+                    <button ng-show="event.status == 1" class="btn btn-danger btn-sm btn-event-action" ng-click="disable($event, event)"><i class="glyphicon glyphicon-remove"></i> Disable</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<nav>
+  <ul class="pager">
+    <li ng-class="{'disabled': page==1}" ng-click="prevPage()"><a href="#">Previous</a></li>
+    <li ng-click="nextPage()"><a href="#">Next</a></li>
+  </ul>
+</nav>
